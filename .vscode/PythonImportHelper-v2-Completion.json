@@ -1,0 +1,46 @@
+[
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt_pixel",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def encrypt_pixel(r, g, b):\n    return (255 - g, 255 - b, 255 - r)\n# Decrypt pixel (same logic to reverse)\ndef decrypt_pixel(r, g, b):\n    return encrypt_pixel(r, g, b)\n# Function to process image\ndef process_image(input_path, output_path, mode='encrypt'):\n    try:\n        # Open image and convert to RGB\n        img = Image.open(input_path).convert('RGB')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "decrypt_pixel",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def decrypt_pixel(r, g, b):\n    return encrypt_pixel(r, g, b)\n# Function to process image\ndef process_image(input_path, output_path, mode='encrypt'):\n    try:\n        # Open image and convert to RGB\n        img = Image.open(input_path).convert('RGB')\n        pixels = img.load()\n        width, height = img.size\n        # Loop through all pixels",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "process_image",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def process_image(input_path, output_path, mode='encrypt'):\n    try:\n        # Open image and convert to RGB\n        img = Image.open(input_path).convert('RGB')\n        pixels = img.load()\n        width, height = img.size\n        # Loop through all pixels\n        for x in range(width):\n            for y in range(height):\n                r, g, b = pixels[x, y]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    print(\"🖼️ Pixel Manipulation - Image Encryption Tool\")\n    print(\"--------------------------------------------\")\n    mode_input = input(\"Choose mode - Encrypt (e) / Decrypt (d): \").strip().lower()\n    if mode_input not in ['e', 'd']:\n        print(\"❌ Invalid option. Please enter 'e' or 'd'.\")\n        return\n    input_file = input(\"Enter input image filename (e.g., input.jpg): \").strip()\n    output_file = input(\"Enter output image filename (e.g., encrypted.png): \").strip()\n    if mode_input == 'e':",
+        "detail": "main",
+        "documentation": {}
+    }
+]
